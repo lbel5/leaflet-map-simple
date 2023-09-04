@@ -39,7 +39,13 @@
         OpenStreetMap</a> contributors, &copy;\
         <a href="https://carto.com/attribution">CARTO</a>'
   }).addTo(map);
-
+    
+var esri = L.esri.featureLayer({
+ url: "https://services3.arcgis.com/G1WwgjpwOa4JbyeG/arcgis/rest/services/Datensatz/FeatureServer/0",
+ style: function () {
+   return { color: "#70ca49", weight: 2 };
+ }
+}).addTo(map);
   /* Display a point marker with pop-up text */
   L.marker([41.77, -72.69]).addTo(map) // EDIT marker coordinates
   .bindPopup("Insert pop-up text here"); // EDIT pop-up text message
